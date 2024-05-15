@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Game-Haber</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" href="style/style.css">
+
+</head>
+<body>
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2">
+					<div class="logo">
+						<img src="style/logo.png" alt="Logo">
+					</div>
+					<h1><a href="home.html">Game-Haber</a></h1>
+				</div>
+				<div class="col-md-8">
+					<nav>
+						<ul>
+							<li><a href="home.html">Anasayfa</a></li>
+							<li><a href="about.html">Hakkımızda</a></li>
+							<li><a href="contact.html">İletişim</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="col-md-2">
+					<nav>
+						<ul>
+							<li><button class="btn btn-outline-info" id="login-btn" onclick="openPopup()">Giriş Yap</button></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+	<main class="container">
+    <div id="card-container" style="margin-top: 70px !important;"></div>
+	</main>
+	<footer class="footer">
+		<p>Copyright © 2024 Game-Haber</p>
+	</footer>
+
+	<div id="login-popup" class="modal">
+			<div class="modal-content">
+				<form>
+					<h2>Giriş Yap</h2>
+					<label for="username">Kullanıcı Adı</label>
+					<input type="text" id="username" name="username">
+					<label for="password">Şifre</label>
+					<input type="password" id="password" name="password">
+				</form>
+				<button id="login-btn" type="submit" class="btn btn-primary">Giriş Yap</button>
+			</div>
+	</div>
+
+	<script src="script/cardScript.js"></script>
+	<script src="script/loginPopup.js"></script>
+</body>
+</html>
