@@ -1,1 +1,0 @@
-ufak bir db için xml dosyası içinde veri tut olmazsa json dosyası olarak dene
