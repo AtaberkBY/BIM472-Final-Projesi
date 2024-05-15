@@ -12,8 +12,59 @@ function closePopup() {
     }, 500); // Bekleme süresi animasyonun bitiş süresine eşit olmalı
 }
 
-const openBtn = document.getElementById('login-popup');
-openBtn.addEventListener('click', openPopup);
+function createLoginButton(){
+    var row = document.getElementById("rowId");
+    var divCol = document.createElement("div");
+    divCol.classList.add("col-md-2");
+
+    var nav = document.createElement("nav");
+
+    var ul = document.createElement("ul");
+
+    var li = document.createElement("li");
+
+    var button = document.createElement("button");
+    button.classList.add("btn", "btn-outline-info");
+    button.id = "login-btn";
+    button.textContent = "Giriş Yap";
+    button.addEventListener("click", openPopup);
+
+
+    li.appendChild(button);
+    ul.appendChild(li);
+    nav.appendChild(ul);
+    divCol.appendChild(nav);
+    row.appendChild(divCol);
+
+}
+function logout(){
+    localStorage.removeItem("token");
+    window.location.reload();
+}
+function createLogoutButton(){
+    var row = document.getElementById("rowId");
+    var divCol = document.createElement("div");
+    divCol.classList.add("col-md-2");
+
+    var nav = document.createElement("nav");
+
+    var ul = document.createElement("ul");
+
+    var li = document.createElement("li");
+
+    var button = document.createElement("button");
+    button.classList.add("btn", "btn-outline-danger");
+    button.id = "logout-btn";
+    button.textContent = "Çıkış Yap";
+    button.addEventListener("click", logout);
+
+
+    li.appendChild(button);
+    ul.appendChild(li);
+    nav.appendChild(ul);
+    divCol.appendChild(nav);
+    row.appendChild(divCol);
+}
 
 const loginPopup = document.getElementById('login-popup');
 
@@ -21,4 +72,16 @@ window.addEventListener('click', (event) => {
     if (event.target === loginPopup) {
         closePopup();
     }
+});
+
+
+document.addEventListener("DOMContentLoaded",function() {
+    if(localStorage.getItem("token") != null){
+        createLogoutButton();
+    }
+    else if(localStorage.getItem("token") == null){
+        createLoginButton();
+    }
+    
+    
 });

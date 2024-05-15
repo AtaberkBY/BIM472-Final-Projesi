@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Ataberk Berke",
+    "surname": "Yılmaz",
+    "username": "ataberk123",
+    "password": "ataberk123",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBdGFiZXJrMTIzIiwiaWF0IjoxNTE2MjM5MDIyfQ.DS-1uWptOhQ1A5YLkrQugDpL5Nt0ok3GJld4UNNcQUw"
+  },
+  {
+    "name": "John",
+    "surname": "Doe",
+    "username": "john_doe",
+    "password": "password123",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKb2huX2RvZSIsImlhdCI6MTUxNjIzOTAyMn0.m2yK_7WUHcbUVmlyQJ_0-wvCZmIxsbAcz-Ed4Mq1MJo"
+  },
+  {
+    "name": "Alice",
+    "surname": "Smith",
+    "username": "alice_smith",
+    "password": "pass123",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBbGljZV9zbWl0aCIsImlhdCI6MTUxNjIzOTAyMn0.jmzdYgOz9Gk3F8CKcvsf2qHmb3UzDfZsSJpKcGpQa1w"
+  }
+]

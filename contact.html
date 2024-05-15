@@ -5,12 +5,14 @@
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 	<link rel="stylesheet" href="style/style.css">
+	<link rel="icon" type="image/x-icon" href="style/logo.png">
+
 
 </head>
 <body>
 	<header>
 		<div class="container">
-			<div class="row">
+			<div id="rowId" class="row">
 				<div class="col-md-2">
 					<div class="logo">
 						<img src="style/logo.png" alt="Logo">
@@ -23,13 +25,6 @@
 							<li><a href="home.html">Anasayfa</a></li>
 							<li><a href="about.html">Hakkımızda</a></li>
 							<li><a href="contact.html">İletişim</a></li>
-						</ul>
-					</nav>
-				</div>
-				<div class="col-md-2">
-					<nav>
-						<ul>
-							<li><button class="btn btn-outline-info" id="login-btn" onclick="openPopup()">Giriş Yap</button></li>
 						</ul>
 					</nav>
 				</div>
@@ -74,18 +69,18 @@
 	</footer>
 
 	<div id="login-popup" class="modal">
-			<div class="modal-content">
-				<form>
-					<h2>Giriş Yap</h2>
-					<label for="username">Kullanıcı Adı</label>
-					<input type="text" id="username" name="username">
-					<label for="password">Şifre</label>
-					<input type="password" id="password" name="password">
-				</form>
-				<button id="login-btn" type="submit" class="btn btn-primary">Giriş Yap</button>
-			</div>
-	</div>
-
+		<div class="modal-content">
+			<form>
+				<h2>Giriş Yap</h2>
+				<label for="username">Kullanıcı Adı<span id="errorMsg" style="color: red; display: none;"></span></label>
+				<input type="text" id="username" name="username">
+				<label for="password">Şifre</label>
+				<input type="password" id="password" name="password">
+			</form>
+			<button id="login-btn" onclick="checkData()" class="btn btn-primary">Giriş Yap</button>
+		</div>
+</div>
+	<script src="script/loginScript.js"></script>
 	<script src="script/cardScript.js"></script>
 	<script src="script/loginPopup.js"></script>
 </body>
