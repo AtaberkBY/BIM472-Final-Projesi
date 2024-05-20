@@ -1,0 +1,45 @@
+    /* New styles for the specific HTML structure */
+    #publish-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+  
+      #publish-card {
+        width: 100%;
+        max-width: 700px;
+        height: auto;
+        padding: 2rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+      }
+  
+      #publish-card h5 {
+        color: #000;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+  
+      #publish-card input, #publish-card textarea {
+        margin-bottom: 1rem;
+        border: 2px solid #333;
+        box-shadow: none; 
+      }
+  
+      #publish-card #createCardBtn, #updateCardBtn{
+        display: block;
+        width: auto;
+        margin: 0 auto;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+      }
+
+      #newsErrorMsg {
+        color: red;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+      }
