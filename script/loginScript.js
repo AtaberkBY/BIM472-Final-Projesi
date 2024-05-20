@@ -1,3 +1,4 @@
+//giriş işleminin sağlanıp eğer true değer dönerse kullanıcı isminden JWT tokenin localStorage'a eklendiği alan
 document.getElementById('login-btn').addEventListener('click', async function(event){
     event.preventDefault();
 

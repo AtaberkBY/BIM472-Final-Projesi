@@ -1,9 +1,11 @@
+//login popup'ını açan fonksiyon
 function openPopup() {
     const loginPopup = document.getElementById('login-popup');
     loginPopup.style.display = 'block';
     loginPopup.style.animation = 'fade-in 0.5s';
 }
 
+//login popup'ını kapatan fonksiyon
 function closePopup() {
     const loginPopup = document.getElementById('login-popup');
     loginPopup.style.animation = 'fade-out 0.5s';
@@ -12,6 +14,7 @@ function closePopup() {
     }, 500);
 }
 
+//giriş yapma butonunu oluşturan fonksiyon
 function createLoginButton(){
     var row = document.getElementById("rowId");
     var divCol = document.createElement("div");
@@ -38,6 +41,7 @@ function createLoginButton(){
 
 }
 
+//çıkış yapma butonunu oluşturan fonksiyon
 function createLogoutButton(){
     var row = document.getElementById("rowId");
     var divCol = document.createElement("div");
@@ -63,12 +67,13 @@ function createLogoutButton(){
     row.appendChild(divCol);
 }
 
-
+//çıkış yapma işlemini gerçekleştiren fonksiyon
 function logout(){
     localStorage.removeItem("token");
     window.location.reload();
 }
 
+//kullanıcı giriş yaptıysa kullanıcı adına göre bir hoşgeldin yazısı yazan fonksiyon
 function createWelcome(){
     var UnorderedList = document.getElementById('unorderedListId');
     var p = document.createElement('p');
@@ -78,7 +83,7 @@ function createWelcome(){
     p.style.marginLeft = '440px';
     UnorderedList.appendChild(p);
 }
-
+//kullanıcının türü admin ise haber girebileceği bir buton oluşturan fonksiyon
 function createAddButton(){
     var btnContainer = document.getElementById('button-container');
     var addButton = document.createElement('button');
@@ -89,7 +94,7 @@ function createAddButton(){
     })
     btnContainer.appendChild(addButton);
 }
-
+//kullanıcı adı ile oluşturulan benzersiz tokenin decode edildiği fonksiyon
 function decodeJWT(jwtToken) {
     try {
         const [header, payload, signature] = jwtToken.split('.');
@@ -102,7 +107,7 @@ function decodeJWT(jwtToken) {
         return null;
     }
 }
-
+//kullanıcın türünün elde edildiği fonksiyon
 async function getUserType(){
 	const token = localStorage.getItem('token');
 	const username = decodeJWT(token);

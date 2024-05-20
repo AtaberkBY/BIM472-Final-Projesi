@@ -1,4 +1,5 @@
- async function getCards(userType){
+//veri tabanında mevcut olan her bir haber nesnesi için ayrı card oluşturup kullanıcı türüne göre o karta ekstra buttonlar ekleyen fonksiyon
+async function getCards(userType){
 	
 	try{
         var response = await fetch('http://localhost:3000/getCards', {
@@ -94,6 +95,7 @@
 
 };
 
+//kullanıcı adı ile oluşturulan benzersiz tokenin decode edildiği fonksiyon
 function decodeJWT(jwtToken) {
     try {
         const [header, payload, signature] = jwtToken.split('.');
@@ -107,6 +109,7 @@ function decodeJWT(jwtToken) {
     }
 }
 
+//kullanıcın türünün elde edildiği fonksiyon
 async function getUserType(){
 	const token = localStorage.getItem('token');
 	const username = decodeJWT(token);
@@ -126,8 +129,7 @@ async function getUserType(){
 	}
 }
 
-
-
+//Haberi silmek için kullanılan fonksiyon
 async function deleteCard(id){
     try{
         var response = await fetch('http://localhost:3000/deleteCard', {

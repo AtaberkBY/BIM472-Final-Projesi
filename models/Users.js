@@ -1,3 +1,4 @@
+//Kullanıcı nesnesinin modeli
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = new Sequelize('GHDB', 'sa', '123456', {
   host: 'localhost',

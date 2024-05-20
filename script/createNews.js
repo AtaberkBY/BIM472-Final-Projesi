@@ -1,3 +1,4 @@
+//Yeni bir haber girildiğinde çalışan fonksiyon
 document.getElementById('createCardBtn').addEventListener('click', function() {
     const imageInput = document.getElementById('imageInput').files[0];
     const titleInput = document.getElementById('titleInput').value;
@@ -26,6 +27,7 @@ document.getElementById('createCardBtn').addEventListener('click', function() {
     })
 })
 
+//Haberin içeriğini düzenlemek için önce halihazırda var olan bilgileri getiren fonksiyon
 async function updateCardGetData(id){
 
     const createBtn = document.getElementById('createCardBtn');
@@ -64,6 +66,7 @@ async function updateCardGetData(id){
 	}
 }
 
+//girilen alanlardaki verileri aynı id'ye sahip alana yazan fonksiyon
 async function updateCard(id){
     const formData = new FormData();
                 
