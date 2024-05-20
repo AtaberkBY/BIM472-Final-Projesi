@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>Game-Haber</title>
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style/style.css">
 	<link rel="icon" type="image/x-icon" href="style/logo.png">
 
@@ -21,7 +21,7 @@
 				</div>
 				<div class="col-md-8">
 					<nav>
-						<ul>
+						<ul id="unorderedListId">
 							<li><a href="home.html">Anasayfa</a></li>
 							<li><a href="about.html">Hakkımızda</a></li>
 							<li><a href="contact.html">İletişim</a></li>
@@ -36,16 +36,16 @@
 			<div class="row" style="margin-top:100px;">
 				<div class="col-md-4">
 					<div class="card" style="width: 18rem;">
-						<img src="style/logo/Email_icon.png" class="card-img-top" alt="Card image cap">
+						<img src="style/Email_icon.png" class="card-img-top" alt="Card image cap">
 						<div class="card-body">
 							<h5 class="card-title">Email</h5>
-							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+							<p class="card-text">game_haber@gh.com</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="card" style="width: 18rem;">
-						<img src="style/logo/phone.png" class="card-img-top" alt="Card image cap">
+						<img src="style/phone.png" class="card-img-top" alt="Card image cap">
 						<div class="card-body">
 							<h5 class="card-title">Telefon Numarası</h5>
 							<p class="card-text">(505) 025-53-34</p>
@@ -54,10 +54,10 @@
 				</div>
 				<div class="col-md-4">
 					<div class="card" style="width: 18rem;">
-						<img src="style/logo/address.png" class="card-img-top" alt="Card image cap">
+						<img src="style/address.png" class="card-img-top" alt="Card image cap">
 						<div class="card-body">
 							<h5 class="card-title">Adres</h5>
-							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+							<p class="card-text">Esenkent, Dudullu Osb Mah, Nato Yolu Cd 265/ 1, 34775 Ümraniye/İstanbul</p>
 						</div>
 					</div>
 				</div>
@@ -77,11 +77,11 @@
 				<label for="password">Şifre</label>
 				<input type="password" id="password" name="password">
 			</form>
-			<button id="login-btn" onclick="checkData()" class="btn btn-primary">Giriş Yap</button>
+			<button id="login-btn" class="btn btn-primary">Giriş Yap</button>
 		</div>
 </div>
-	<script src="script/loginScript.js"></script>
-	<script src="script/cardScript.js"></script>
-	<script src="script/loginPopup.js"></script>
+<script type="module" src="script/loginScript.js"></script>
+<script src="script/cardScript.js"></script>
+<script src="script/loginPopup.js"></script>
 </body>
 </html>

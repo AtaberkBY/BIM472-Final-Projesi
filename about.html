@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>Game-Haber</title>
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style/style.css">
 	<link rel="icon" type="image/x-icon" href="style/logo.png">
 
@@ -11,26 +11,27 @@
 </head>
 <body>
 	<header>
-		<div class="container">
-			<div id="rowId" class="row">
-				<div class="col-md-2">
-					<div class="logo">
-						<img src="style/logo.png" alt="Logo">
+		<header>
+			<div class="container">
+				<div id="rowId" class="row">
+					<div class="col-md-2">
+						<div class="logo">
+							<img src="style/logo.png" alt="Logo">
+						</div>
+						<h1><a href="home.html">Game-Haber</a></h1>
 					</div>
-					<h1><a href="home.html">Game-Haber</a></h1>
-				</div>
-				<div class="col-md-8">
-					<nav>
-						<ul>
-							<li><a href="home.html">Anasayfa</a></li>
-							<li><a href="about.html">Hakkımızda</a></li>
-							<li><a href="contact.html">İletişim</a></li>
-						</ul>
-					</nav>
+					<div class="col-md-8">
+						<nav>
+							<ul id="unorderedListId">
+								<li><a href="home.html">Anasayfa</a></li>
+								<li><a href="about.html">Hakkımızda</a></li>
+								<li><a href="contact.html">İletişim</a></li>
+							</ul>
+						</nav>
+					</div>
 				</div>
 			</div>
-		</div>
-	</header>
+		</header>
   <main class="container">
 		<div id="about-me-container" style="margin-top: 100px;">
 			<div class="card">
@@ -63,11 +64,11 @@
 				<label for="password">Şifre</label>
 				<input type="password" id="password" name="password">
 			</form>
-			<button id="login-btn" onclick="checkData()" class="btn btn-primary">Giriş Yap</button>
+			<button id="login-btn" class="btn btn-primary">Giriş Yap</button>
 		</div>
 </div>
-	<script src="script/loginScript.js"></script>
-	<script src="script/cardScript.js"></script>
-	<script src="script/loginPopup.js"></script>
+<script type="module" src="script/loginScript.js"></script>
+<script src="script/cardScript.js"></script>
+<script src="script/loginPopup.js"></script>
 </body>
 </html>

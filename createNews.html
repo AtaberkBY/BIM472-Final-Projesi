@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Game-Haber</title>
+  <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/createNewsStyle.css">
+	<link rel="icon" type="image/x-icon" href="style/logo.png">
+</head>
+<body>
+	<header>
+		<div class="container">
+			<div id="rowId" class="row">
+				<div class="col-md-2">
+					<div class="logo">
+						<img src="style/logo.png" alt="Logo">
+					</div>
+					<h1><a href="home.html">Game-Haber</a></h1>
+				</div>
+				<div class="col-md-8">
+					<nav>
+						<ul id="unorderedListId">
+							<li><a href="home.html">Anasayfa</a></li>
+							<li><a href="about.html">Hakkımızda</a></li>
+							<li><a href="contact.html">İletişim</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+    <main id="publish-container">
+        <div id="publish-card" class="card">
+          <div class="card-body">
+            <h5 class="card-title"><b>Haber Resmi</b></h5>
+            <input type="file" id="imageInput" class="form-control" accept="image/png">
+    
+            <h5 class="card-title"><b>Haber Başlığı</b></h5>
+            <input type="text" id="titleInput" class="form-control" placeholder="Haber Başlığı">
+    
+            <h5 class="card-title"><b>Haber Açıklaması</b></h5>
+            <textarea id="detailInput" class="form-control" placeholder="Haber Açıklaması"></textarea>
+    
+            <button class="btn btn-primary" id="createCardBtn">Yayınla!</button>
+			<div id="newsErrorMsg"></div>
+          </div>
+        </div>
+      </main>
+	<footer class="footer">
+		<p>Copyright © 2024 Game-Haber</p>
+	</footer>
+	<div id="login-popup" class="modal">
+			<div class="modal-content">
+				<form>
+					<h2>Giriş Yap</h2>
+					<label for="username">Kullanıcı Adı<span id="errorMsg" style="color: red; display: none;"></span></label>
+					<input type="text" id="username" name="username">
+					<label for="password">Şifre</label>
+					<input type="password" id="password" name="password">
+				</form>
+				<button id="login-btn" class="btn btn-primary">Giriş Yap</button>
+			</div>
+	</div>
+	<script src="script/createNews.js"></script>
+	<script type="module" src="script/loginScript.js"></script>
+	<script src="script/cardScript.js"></script>
+	<script src="script/loginPopup.js"></script>
+</body>
+</html>
