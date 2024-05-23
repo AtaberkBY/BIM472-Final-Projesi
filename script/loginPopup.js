@@ -86,6 +86,9 @@ function createWelcome(){
 //kullanıcının türü admin ise haber girebileceği bir buton oluşturan fonksiyon
 function createAddButton(){
     var btnContainer = document.getElementById('button-container');
+    if(btnContainer === null){
+        return false;
+    }
     var addButton = document.createElement('button');
     addButton.textContent = "Yeni haber ekle";
     addButton.classList.add('btn', 'btn-success');
@@ -96,6 +99,9 @@ function createAddButton(){
 }
 //kullanıcı adı ile oluşturulan benzersiz tokenin decode edildiği fonksiyon
 function decodeJWT(jwtToken) {
+    if(jwtToken === null){
+        return false;
+    }
     try {
         const [header, payload, signature] = jwtToken.split('.');
 
@@ -111,6 +117,9 @@ function decodeJWT(jwtToken) {
 async function getUserType(){
 	const token = localStorage.getItem('token');
 	const username = decodeJWT(token);
+	if(username === false){
+		return false;
+	}
 	try {
 	var response = await fetch('http://localhost:3000/getUser',{
 		method: 'POST',
@@ -135,7 +144,10 @@ window.addEventListener('click', (event) => {
 });
 
 
+
+
 document.addEventListener("DOMContentLoaded", async function() {
+
     if(localStorage.getItem("token") != null){
         createLogoutButton();
         createWelcome();

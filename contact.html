@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Game-Haber</title>
 	<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style/style.css">
 	<link rel="icon" type="image/x-icon" href="style/logo.png">
+	<script src="/jquery/jquery.min.js"></script>
+	<link rel="stylesheet" href="style/contact.css">
+	<link rel="stylesheet" href="style/loginPopup.css">
+
 
 
 </head>
+
 <body>
 	<header>
 		<div class="container">
@@ -34,30 +40,46 @@
 	<main class="container">
 		<div id="contact-container">
 			<div class="row" style="margin-top:100px;">
-				<div class="col-md-4">
-					<div class="card" style="width: 18rem;">
-						<img src="style/Email_icon.png" class="card-img-top" alt="Card image cap">
+				<div class="col-md-12" id="contactForm">
+					<div class="card mx-auto w-50">
 						<div class="card-body">
-							<h5 class="card-title">Email</h5>
-							<p class="card-text">game_haber@gh.com</p>
+							<h5 class="card-title">İletişim Formu</h5>
+							<form>
+								<div class="form-group" style="margin: 10px;">
+									<label for="name">İsim</label>
+									<input type="text" class="form-control" id="name" placeholder="İsminizi girin">
+								</div>
+								<div class="form-group" style="margin: 10px;">
+									<label for="email">Email</label>
+									<input type="email" class="form-control" id="email"
+										placeholder="Email adresinizi girin">
+								</div>
+								<div class="form-group" style="margin: 10px;">
+									<label for="reason">Açıklama</label>
+									<input type="text" class="form-control" id="message"
+										placeholder="Açıklamanızı girin">
+								</div>
+								<span style="text-align: center;" id="errorMessage"></span>
+								<button id="sendFormBtn" class="btn btn-primary">Gönder</button>
+							</form>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4">
-					<div class="card" style="width: 18rem;">
-						<img src="style/phone.png" class="card-img-top" alt="Card image cap">
-						<div class="card-body">
-							<h5 class="card-title">Telefon Numarası</h5>
-							<p class="card-text">(505) 025-53-34</p>
+				<div class="col-md-12" id="adminMessagePanel">
+					<div class="card mx-auto w-50" style="height: 80vh;">
+						<div class="card-header bg-primary text-white">
+							<h5 class="card-title">Mesajlar</h5>
 						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="card" style="width: 18rem;">
-						<img src="style/address.png" class="card-img-top" alt="Card image cap">
-						<div class="card-body">
-							<h5 class="card-title">Adres</h5>
-							<p class="card-text">Esenkent, Dudullu Osb Mah, Nato Yolu Cd 265/ 1, 34775 Ümraniye/İstanbul</p>
+						<div class="card-body" style="overflow-y: auto;">
+							<div id="messageContainer" class="message-container">
+							</div>
+						</div>
+						<div class="card-footer">
+							<form>
+								<div class="input-group">
+									<input type="text" id="searchInput" class="form-control" placeholder="Mesajlar içerisinde ara...">
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -68,20 +90,41 @@
 		<p>Copyright © 2024 Game-Haber</p>
 	</footer>
 
+	<!-- Modal -->
+	<div class="modal fade" id="messageDetailModal" tabindex="1" role="dialog"
+		aria-labelledby="messageDetailModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="messageDetailModalLabel">TEST</h5>
+					<span class="message-date" id="modalMessageDate"></span>
+				</div>
+				<div class="modal-body" id="modalBody">
+					<p id="modalMessageContent"></p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" id="messageDeleteButton">Sil</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div id="login-popup" class="modal">
 		<div class="modal-content">
 			<form>
 				<h2>Giriş Yap</h2>
-				<label for="username">Kullanıcı Adı<span id="errorMsg" style="color: red; display: none;"></span></label>
+				<label for="username">Kullanıcı Adı<span id="errorMsg"
+						style="color: red; display: none;"></span></label>
 				<input type="text" id="username" name="username">
 				<label for="password">Şifre</label>
 				<input type="password" id="password" name="password">
 			</form>
 			<button id="login-btn" class="btn btn-primary">Giriş Yap</button>
 		</div>
-</div>
-<script type="module" src="script/loginScript.js"></script>
-<script src="script/cardScript.js"></script>
-<script src="script/loginPopup.js"></script>
+	</div>
+	<script src="script/contactScript.js"></script>
+	<script type="module" src="script/loginScript.js"></script>
+	<script src="script/cardScript.js"></script>
+	<script src="script/loginPopup.js"></script>
 </body>
+
 </html>

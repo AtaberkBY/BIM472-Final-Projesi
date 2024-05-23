@@ -1,52 +1,66 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Game-Haber</title>
 	<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style/style.css">
 	<link rel="icon" type="image/x-icon" href="style/logo.png">
+	<link rel="stylesheet" href="style/loginPopup.css">
 
 
 </head>
+
 <body>
 	<header>
-		<header>
-			<div class="container">
-				<div id="rowId" class="row">
-					<div class="col-md-2">
-						<div class="logo">
-							<img src="style/logo.png" alt="Logo">
-						</div>
-						<h1><a href="home.html">Game-Haber</a></h1>
+		<div class="container">
+			<div id="rowId" class="row">
+				<div class="col-md-2">
+					<div class="logo">
+						<img src="style/logo.png" alt="Logo">
 					</div>
-					<div class="col-md-8">
-						<nav>
-							<ul id="unorderedListId">
-								<li><a href="home.html">Anasayfa</a></li>
-								<li><a href="about.html">Hakkımızda</a></li>
-								<li><a href="contact.html">İletişim</a></li>
-							</ul>
-						</nav>
-					</div>
+					<h1><a href="home.html">Game-Haber</a></h1>
+				</div>
+				<div class="col-md-8">
+					<nav>
+						<ul id="unorderedListId">
+							<li><a href="home.html">Anasayfa</a></li>
+							<li><a href="about.html">Hakkımızda</a></li>
+							<li><a href="contact.html">İletişim</a></li>
+						</ul>
+					</nav>
 				</div>
 			</div>
-		</header>
-  <main class="container">
+		</div>
+	</header>
+	<main class="container">
 		<div id="about-me-container" style="margin-top: 100px;">
 			<div class="card">
 				<img src="style/logo.png" class="card-img-top" alt="Card image cap">
 				<div class="card-body">
 					<h5 class="card-title">Biz kimiz?</h5>
-					<p class="card-text">Game-Haber, oyun dünyasındaki en güncel ve ilgi çekici haberleri sizlere ulaştırmak için kurulmuş bir platformdur. Oyun tutkunlarına en yeni oyun duyurularını, güncellemeleri, incelemeleri ve endüstri haberlerini sunarak oyun dünyasındaki gelişmeleri yakından takip etmelerine olanak sağlıyoruz.
+					<p class="card-text">Game-Haber, oyun dünyasındaki en güncel ve ilgi çekici haberleri sizlere
+						ulaştırmak için kurulmuş bir platformdur. Oyun tutkunlarına en yeni oyun duyurularını,
+						güncellemeleri, incelemeleri ve endüstri haberlerini sunarak oyun dünyasındaki gelişmeleri
+						yakından takip etmelerine olanak sağlıyoruz.
 
-            Amacımız, oyun severlerin tutkularını besleyen ve onları bilgilendiren içerikler sunmaktır. Oyunların sadece eğlence aracı olmanın ötesinde bir kültür, sanat ve teknoloji unsuru olduğuna inanıyoruz. Bu nedenle, oyun endüstrisinin her alanında olan bitenleri titizlikle takip ediyor ve okuyucularımıza en doğru ve güvenilir bilgileri sunmak için çaba gösteriyoruz.
-            
-            Game-Haber ekibi, deneyimli editörler ve oyun dünyasının önde gelen uzmanlarından oluşmaktadır. Her biri kendi alanında uzmanlaşmış olan ekibimiz, en çarpıcı haberleri sizlere sunmak için sürekli olarak çalışmaktadır.
-            
-            Siz değerli okuyucularımızın desteğiyle, Game-Haber'i oyun dünyasındaki lider bir kaynak haline getirmek için kararlılıkla ilerliyoruz. Her zaman açık ve şeffaf bir iletişim politikası izleyerek, okuyucularımızın geri bildirimlerini dikkate alıyor ve onların beklentilerini karşılamak için sürekli olarak kendimizi geliştiriyoruz.
-            
-            Game-Haber'e hoş geldiniz. Oyun dünyasındaki en sıcak gelişmeleri takip etmek için bizi tercih ettiğiniz için teşekkür ederiz.</p>
+						Amacımız, oyun severlerin tutkularını besleyen ve onları bilgilendiren içerikler sunmaktır.
+						Oyunların sadece eğlence aracı olmanın ötesinde bir kültür, sanat ve teknoloji unsuru olduğuna
+						inanıyoruz. Bu nedenle, oyun endüstrisinin her alanında olan bitenleri titizlikle takip ediyor
+						ve okuyucularımıza en doğru ve güvenilir bilgileri sunmak için çaba gösteriyoruz.
+
+						Game-Haber ekibi, deneyimli editörler ve oyun dünyasının önde gelen uzmanlarından oluşmaktadır.
+						Her biri kendi alanında uzmanlaşmış olan ekibimiz, en çarpıcı haberleri sizlere sunmak için
+						sürekli olarak çalışmaktadır.
+
+						Siz değerli okuyucularımızın desteğiyle, Game-Haber'i oyun dünyasındaki lider bir kaynak haline
+						getirmek için kararlılıkla ilerliyoruz. Her zaman açık ve şeffaf bir iletişim politikası
+						izleyerek, okuyucularımızın geri bildirimlerini dikkate alıyor ve onların beklentilerini
+						karşılamak için sürekli olarak kendimizi geliştiriyoruz.
+
+						Game-Haber'e hoş geldiniz. Oyun dünyasındaki en sıcak gelişmeleri takip etmek için bizi tercih
+						ettiğiniz için teşekkür ederiz.</p>
 					<p class="card-text"><strong>Kuruluş Tarihi:</strong> Mayıs, 2024</p>
 				</div>
 			</div>
@@ -59,16 +73,18 @@
 		<div class="modal-content">
 			<form>
 				<h2>Giriş Yap</h2>
-				<label for="username">Kullanıcı Adı<span id="errorMsg" style="color: red; display: none;"></span></label>
+				<label for="username">Kullanıcı Adı<span id="errorMsg"
+						style="color: red; display: none;"></span></label>
 				<input type="text" id="username" name="username">
 				<label for="password">Şifre</label>
 				<input type="password" id="password" name="password">
 			</form>
 			<button id="login-btn" class="btn btn-primary">Giriş Yap</button>
 		</div>
-</div>
-<script type="module" src="script/loginScript.js"></script>
-<script src="script/cardScript.js"></script>
-<script src="script/loginPopup.js"></script>
+	</div>
+	<script type="module" src="script/loginScript.js"></script>
+	<script src="script/cardScript.js"></script>
+	<script src="script/loginPopup.js"></script>
 </body>
+
 </html>

@@ -14,7 +14,7 @@ async function getCards(userType){
             const container = document.getElementById('card-container');
 				result.forEach((card) => {
 				const cardElement = document.createElement('div');
-				cardElement.classList.add('card', 'mb-4');
+				cardElement.classList.add('card', 'mb-2');
 
 				const buttonContainer = document.createElement('div');
 				buttonContainer.style.display = 'flex';
@@ -97,6 +97,9 @@ async function getCards(userType){
 
 //kullanıcı adı ile oluşturulan benzersiz tokenin decode edildiği fonksiyon
 function decodeJWT(jwtToken) {
+    if(jwtToken === null){
+        return false;
+    }
     try {
         const [header, payload, signature] = jwtToken.split('.');
 
@@ -104,7 +107,7 @@ function decodeJWT(jwtToken) {
 
         return decodedPayload.username;
     } catch (error) {
-        console.error('JWT Token çözümlenirken bir hata oldu:', error);
+        console.error('Error decoding JWT:', error);
         return null;
     }
 }
@@ -113,6 +116,9 @@ function decodeJWT(jwtToken) {
 async function getUserType(){
 	const token = localStorage.getItem('token');
 	const username = decodeJWT(token);
+	if(username === false){
+		return false;
+	}
 	try {
 	var response = await fetch('http://localhost:3000/getUser',{
 		method: 'POST',
@@ -149,7 +155,6 @@ async function deleteCard(id){
     }
 
 }
-
 
 
 document.addEventListener('DOMContentLoaded', async function(){
