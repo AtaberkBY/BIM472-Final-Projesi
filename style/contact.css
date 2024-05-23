@@ -1,38 +1,36 @@
-/* modal.css */
-
 #messageDetailModal {
-    color: #ffffff; /* white text */
+    color: #ffffff; 
 }
 
 #messageDetailModal .modal-content {
-    background-color: #0d0d59; /* darker blue background */
+    background-color: #0d0d59; 
 }
 
 #messageDetailModal .modal-header {
-    border-bottom-color: #800080; /* brighter purple bottom border */
+    border-bottom-color: #800080;
     display: flex;
-    justify-content: space-between; /* space between title and date */
+    justify-content: space-between;
 }
 
 #messageDetailModal .modal-title {
-    color: #ffffff; /* white title for better contrast */
+    color: #ffffff;
     margin-right: auto;
 }
 
 #messageDetailModal .message-date {
-    color: #ffffff; /* white date for better contrast */
+    color: #ffffff;
     margin-left: auto;
 }
 
 #messageDetailModal .modal-body {
-    color: #ffffff; /* white text */
+    color: #ffffff;
 }
 
 #messageDetailModal .modal-footer {
-    border-top-color: #0d0d59; /* brighter purple top border */
+    border-top-color: #0d0d59;
 }
 
 #messageDetailModal .btn-danger {
-    background-color: #780909; /* brighter purple button */
-    border-color: #ffffff; /* white border for better contrast */
+    background-color: #780909;
+    border-color: #ffffff;
 }
