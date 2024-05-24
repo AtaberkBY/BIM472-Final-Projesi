@@ -98,6 +98,7 @@ document.getElementById('messageDeleteButton').addEventListener('click', functio
 
 async function deleteMessage(id){
     var messageDetailModal = $('#messageDetailModal'); 
+    console.log(id)
     try {
         var response = await fetch('http://localhost:3000/deleteMessage', {
             method: 'POST',
@@ -106,6 +107,7 @@ async function deleteMessage(id){
             },
             body: JSON.stringify({ id })
         });
+        console.log(response.body)
         var result = await response.json();
         console.log(result)
         if (result.success) {
@@ -126,11 +128,14 @@ sendFormBtn.addEventListener('click', async function () {
     var email = document.getElementById('email').value;
     var message = document.getElementById('message').value;
     var errorMessage = document.getElementById('errorMessage');
-    var emailChecker = email.split('@')[1]
-    console.log(name);
     if (name.length < 2) {
         errorMessage.style.display = "block";
         errorMessage.textContent = "İsim alanı boş olamaz!"
+        return;
+    }
+    if (email.length < 8 && email != undefined){
+        errorMessage.style.display = "block";
+        errorMessage.textContent = "Geçerli bir mail adresi giriniz!"
         return;
     }
     if (message.length < 30) {
@@ -138,11 +143,7 @@ sendFormBtn.addEventListener('click', async function () {
         errorMessage.textContent = "Mesajınız 30 karakterden az olamaz!"
         return;
     }
-    if (email.length < 8 && (emailChecker === "gmail.com" || emailChecker === "icloud.com" || emailChecker === "yandex.com")) {
-        errorMessage.style.display = "block";
-        errorMessage.textContent = "Geçerli bir mail adresi giriniz!"
-        return;
-    }
+
     try {
         var response = await fetch('http://localhost:3000/addMessage', {
             method: 'POST',
@@ -152,10 +153,11 @@ sendFormBtn.addEventListener('click', async function () {
             body: JSON.stringify({ name, email, message })
 
         })
-        var result = response.json();
+        var result = await response.json();
         if (result.success) {
             errorMessage.style.display = "block";
-            errorMessage.textContent = "Mesajınız başarıyla gönderildi!"
+            errorMessage.style.color = "green";
+            errorMessage.textContent = result.message
         }
     } catch (error) {
         console.log("Hata:" + error);
@@ -189,8 +191,6 @@ function showMessageDetail() {
     });
 
 }
-
-
 
 async function getAllMessages() {
     try {

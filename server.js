@@ -79,18 +79,30 @@ app.get('/getCards', async (req, res) => {
     await sql.close();
   }
 });
-app.post('/addNews', upload.single('image'), async (req, res) => {
+app.post('/addNews', async (req, res) => {
+  if (!req.body.name || !req.body.detail) {
+    res.status(400).send('Name and detail are required');
+    return;
+}
+
+if (!req.file) {
+    res.status(400).send('Image file is required');
+    return;
+}
+
   const name = req.body.name
   const detail = req.body.detail;
   const image = req.file.buffer;
+
+
 
   const query = `INSERT INTO news (name, detail, date, imageData) VALUES (@name, @detail, @date, @imageData)`;
 
   const params = [
     { name: 'name', type: sql.NVarChar, value: name },
     { name: 'detail', type: sql.NVarChar, value: detail },
+    { name: 'imageData', type: sql.VarBinary(sql.MAX), value: image },
     { name: 'date', type: sql.Date, value: new Date() },
-    { name: 'imageData', type: sql.VarBinary(sql.MAX), value: image }
   ];
 
   let connection;
@@ -98,6 +110,7 @@ app.post('/addNews', upload.single('image'), async (req, res) => {
   try {
     connection = await sql.connect(config);
     const request = connection.request();
+    console.log(params)
     params.forEach(param => {
       request.input(param.name, param.type, param.value);
     });
@@ -107,8 +120,6 @@ app.post('/addNews', upload.single('image'), async (req, res) => {
     console.log('Haber girilirken hata:' + err);
     res.status(500).send({ error: 'Veritabanı Hatası' })
   }
-
-
 });
 
 app.post('/login', async (req, res) => {
@@ -171,12 +182,11 @@ app.post('/updateCardGetData', async (req, res) => {
 })
 
 app.post('/deleteMessage' , async (req,res) => {
-  const {id} = req.body.messageId;
-  console.log(id)
+  const id = req.body.id;
+
   try {
     await sql.connect(config);
     const result = await sql.query`DELETE FROM Messages WHERE id = ${id}`;
-    console.log(result)
     res.status(200).json({success:true,message:'Mesaj başarıyla silindi.'});
   } catch (error) {
     console.log(error);
@@ -241,7 +251,7 @@ app.post('/updateCard', async (req, res) => {
 app.post('/addMessage', async (req, res) => {
   const { name, email, message } = req.body;
   const date = new Date();
-  console.log(name,email,message,date);
+  console.log("name:"+name+", email:"+email+", message:"+message+", date:"+date);
   try {
     await sql.connect(config);
     const result = await sql.query`INSERT INTO Messages (name, email, message, sendDate) VALUES (${name}, ${email}, ${message}, ${date})`;

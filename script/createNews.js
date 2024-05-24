@@ -1,20 +1,20 @@
 //Yeni bir haber girildiğinde çalışan fonksiyon
 document.getElementById('createCardBtn').addEventListener('click', function() {
+    const formData = new FormData();
     const imageInput = document.getElementById('imageInput').files[0];
     const titleInput = document.getElementById('titleInput').value;
     const detailInput = document.getElementById('detailInput').value;
     var errorMsg = document.getElementById('newsErrorMsg');
-    console.log(imageInput)
     if(imageInput === undefined || titleInput === undefined || detailInput === undefined){
         errorMsg.style.display = "block";
         errorMsg.textContent = "Bütün alanlar doldurulmalıdır.";
         return;
     }
     
-    const formData = new FormData();
-    formData.append('image', imageInput);
+
     formData.append('name',titleInput);
     formData.append('detail',detailInput);
+    formData.append('image', imageInput);
 
     fetch('/addNews', {
         method: 'POST',
@@ -25,6 +25,9 @@ document.getElementById('createCardBtn').addEventListener('click', function() {
         errorMsg.style.color = 'green';
         errorMsg.textContent = data.message;        
     })
+    .catch(error => {
+        console.log('Error:', error);
+    });
 })
 
 //Haberin içeriğini düzenlemek için önce halihazırda var olan bilgileri getiren fonksiyon

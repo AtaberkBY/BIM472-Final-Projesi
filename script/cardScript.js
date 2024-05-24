@@ -23,7 +23,7 @@ async function getCards(userType){
 
 				const cardDate = document.createElement('p');
 				cardDate.classList.add('card-text');
-				cardDate.textContent = `Published on ${card.row.date}`;
+				cardDate.textContent = `Yayınlanma Tarihi: ${card.row.date}`;
 				const cardImage = document.createElement('img');
 				cardImage.classList.add('card-img-top');
 				cardImage.src = `data:image/png;base64,${card.base64Image}`;
